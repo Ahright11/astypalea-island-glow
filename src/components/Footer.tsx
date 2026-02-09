@@ -1,56 +1,66 @@
-import { Facebook, Instagram, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Facebook, Instagram, Mail, Phone, MapPin, Shield } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-ocean py-10 md:py-16 text-primary-foreground">
+    <footer className="bg-gradient-ocean py-12 md:py-16 text-primary-foreground">
       <div className="container mx-auto px-5 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 mb-8 md:mb-12">
-          <div className="col-span-2 md:col-span-2">
-            <h3 className="font-display text-2xl font-bold mb-4">Astypalea Tours</h3>
-            <p className="text-primary-foreground/70 max-w-md leading-relaxed">
-              Από το 1985 δίπλα στους ταξιδιώτες. Ανακαλύψτε την Αστυπάλαια & τον κόσμο μαζί μας.
-              Αξιοπιστία, εμπειρία & αγάπη για το ταξίδι.
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 mb-10">
+          <div className="col-span-2 md:col-span-1">
+            <h3 className="font-display text-xl font-bold mb-4">Astypalea Tours</h3>
+            <p className="text-primary-foreground/70 text-sm leading-relaxed mb-4">
+              Από το 1985 δίπλα στους ταξιδιώτες. IATA Certified ταξιδιωτικό γραφείο.
             </p>
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-3">
               {[Facebook, Instagram, Mail].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-colors duration-300 hover:bg-primary-foreground/20"
-                >
-                  <Icon size={18} />
+                <a key={i} href="#" className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center transition-colors hover:bg-primary-foreground/20">
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-primary-foreground/60">
-              Υπηρεσίες
-            </h4>
+            <h4 className="font-semibold text-xs uppercase tracking-wider mb-4 text-primary-foreground/60">Υπηρεσίες</h4>
             <ul className="space-y-2 text-primary-foreground/70 text-sm">
-              {["Ακτοπλοϊκά", "Αεροπορικά", "Ξενοδοχεία", "Κρουαζιέρες", "Γάμοι"].map((s) => (
-                <li key={s}>
-                  <a href="#services" className="hover:text-primary-foreground transition-colors">{s}</a>
-                </li>
-              ))}
+              <li><Link to="/ferries" className="hover:text-primary-foreground transition-colors">Ακτοπλοϊκά</Link></li>
+              <li><Link to="/flights" className="hover:text-primary-foreground transition-colors">Αεροπορικά</Link></li>
+              <li><Link to="/hotels" className="hover:text-primary-foreground transition-colors">Ξενοδοχεία</Link></li>
+              <li><Link to="/packages" className="hover:text-primary-foreground transition-colors">Πακέτα</Link></li>
+              <li><Link to="/excursions" className="hover:text-primary-foreground transition-colors">Εκδρομές</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-primary-foreground/60">
-              Επικοινωνία
-            </h4>
+            <h4 className="font-semibold text-xs uppercase tracking-wider mb-4 text-primary-foreground/60">Περισσότερα</h4>
             <ul className="space-y-2 text-primary-foreground/70 text-sm">
-              <li>+30 22430 61571</li>
-              <li>info@astypaleatours.gr</li>
-              <li>Χώρα Αστυπάλαιας, 85900</li>
+              <li><Link to="/yachts" className="hover:text-primary-foreground transition-colors">Ενοικίαση Σκαφών</Link></li>
+              <li><Link to="/weddings" className="hover:text-primary-foreground transition-colors">Γάμοι</Link></li>
+              <li><Link to="/transfers" className="hover:text-primary-foreground transition-colors">Μεταφορές</Link></li>
+              <li><Link to="/contact" className="hover:text-primary-foreground transition-colors">Επικοινωνία</Link></li>
             </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-xs uppercase tracking-wider mb-4 text-primary-foreground/60">Επικοινωνία</h4>
+            <ul className="space-y-3 text-primary-foreground/70 text-sm">
+              <li className="flex items-center gap-2"><Phone size={14} /> +30 22430 61571</li>
+              <li className="flex items-center gap-2"><Mail size={14} /> info@astypaleatours.gr</li>
+              <li className="flex items-center gap-2"><MapPin size={14} /> Χώρα, 85900 Αστυπάλαια</li>
+            </ul>
+            <div className="mt-4 flex items-center gap-2 text-xs text-primary-foreground/50">
+              <Shield size={14} /> IATA Certified Agency
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-8 text-center text-sm text-primary-foreground/50">
-          © {new Date().getFullYear()} Astypalea Tours. Όλα τα δικαιώματα κατοχυρωμένα.
+        <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/50">
+          <span>&copy; {new Date().getFullYear()} Astypalea Tours. Όλα τα δικαιώματα κατοχυρωμένα.</span>
+          <div className="flex gap-6 text-xs">
+            <span>Όροι Χρήσης</span>
+            <span>Πολιτική Απορρήτου</span>
+            <span>Cookies</span>
+          </div>
         </div>
       </div>
     </footer>
