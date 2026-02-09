@@ -12,18 +12,18 @@ const images = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-24 bg-muted/50">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-3">
+    <section id="gallery" className="py-14 md:py-24 bg-muted/50">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+          <p className="text-accent font-semibold text-xs md:text-sm uppercase tracking-[0.2em] mb-2 md:mb-3">
             Γκαλερί
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
             Εικόνες που <span className="text-gradient-ocean">Μαγεύουν</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[220px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] md:auto-rows-[220px]">
           {images.map((img) => (
             <div
               key={img.label}

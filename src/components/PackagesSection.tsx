@@ -47,21 +47,21 @@ const packages = [
 
 const PackagesSection = () => {
   return (
-    <section id="packages" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-accent font-semibold text-sm uppercase tracking-[0.2em] mb-3">
+    <section id="packages" className="py-14 md:py-24 bg-background">
+      <div className="container mx-auto px-5 md:px-6">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+          <p className="text-accent font-semibold text-xs md:text-sm uppercase tracking-[0.2em] mb-2 md:mb-3">
             Πακέτα & Τιμές
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-3 md:mb-4">
             Δημοφιλή <span className="text-gradient-ocean">Πακέτα</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base md:text-lg">
             Επιλέξτε την εμπειρία που σας ταιριάζει
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
           {packages.map((pkg, idx) => (
             <div
               key={pkg.title}
@@ -69,7 +69,7 @@ const PackagesSection = () => {
                 idx === 1 ? "md:-translate-y-4 ring-2 ring-accent/30" : ""
               }`}
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-48 md:h-56 overflow-hidden">
                 <img
                   src={pkg.image}
                   alt={pkg.title}
@@ -79,8 +79,8 @@ const PackagesSection = () => {
                   {pkg.tag}
                 </span>
               </div>
-              <div className="p-7">
-                <h3 className="font-display text-2xl font-bold text-foreground mb-2">
+              <div className="p-5 md:p-7">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-2">
                   {pkg.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
